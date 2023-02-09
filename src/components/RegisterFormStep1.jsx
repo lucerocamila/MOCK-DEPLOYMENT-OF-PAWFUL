@@ -1,18 +1,16 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 
-const RegisterFormStep1 = (labelArray) => {
-    const updateStep = (step)=> {
-        setCurrentStep(step);
-      }
+const RegisterFormStep1 = () => {
+    
     const { register, formState: { errors }, handleSubmit } = useForm({
       
     });
 
     const onSubmit = (data) => {
+        <div>Data{data}</div>
         console.log(data);
     }
-    const [currentStep, setCurrentStep] = useState(1);
 
 
 
@@ -44,9 +42,9 @@ const RegisterFormStep1 = (labelArray) => {
             </div>
             <br />
             <br />
-            <button className="primaryButton" disabled={currentStep === labelArray.length} onClick={() => updateStep(currentStep+1)}>Continuar</button>
             <br />
             <br />
+            
         </form>
     </div>
 }

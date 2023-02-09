@@ -1,27 +1,23 @@
+import React from 'react';
 import { useForm } from "react-hook-form";
-import { useState } from "react";
+import { useState } from 'react';
 
-const RegisterFormStep1 = (labelArray) => {
-    const [currentStep, setCurrentStep] = useState(1);
+const updateStep = (step)=> {
+    setCurrentStep(step);
+  }
+  const [currentStep, setCurrentStep] = useState(1);
 
-    const updateStep = (step)=> {
-        setCurrentStep(step);
-      }
+const RegisterFormStep2 = (labelArray) => {
     const { register, formState: { errors }, handleSubmit } = useForm({
-      
+    
     });
 
     const onSubmit = (data) => {
-        <div>Data{data}</div>
-        console.log(data);
-    }
-
-
-
-    return <div>
-        <form  onSubmit={handleSubmit(onSubmit)}>
-                       
+        console.log(data);}
+    return (
         <div>
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <div>
                     <label>Nombre de usuario</label>
                     <br />
 
@@ -37,15 +33,24 @@ const RegisterFormStep1 = (labelArray) => {
                 <p>Seleccione su rol</p>
                 <br />
                 Soy cliente<input className="SyUSyP"type="checkbox" /> Soy profesional<input className="SyUSyP" type="checkbox" />
-              
-            <br />
-            <br />
-            <button className="RButton" disabled={currentStep === labelArray.length} onClick={() => updateStep(currentStep+1)}>Registrar</button>
-            <br />
-            <br />
-            
-        </form>
-    </div>
-}
+                <br />
+                <br />
 
-export default RegisterFormStep1;
+                <br />
+            <br />
+            <button className="primaryButton" disabled={currentStep === labelArray.length} onClick={() => updateStep(currentStep+1)}>Registrar</button>
+            <br />
+
+
+            <br />
+            <br />
+
+                
+            
+
+            </form>
+        </div>
+    );
+};
+
+export default RegisterFormStep2;

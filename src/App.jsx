@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import RegisterFormStep1 from "./components/RegisterFormStep1";
-import RegisterFormStep2 from "./components/RegisterFormStep2";
+import RegisterFormStep2 from "./components/RegisterFormStep22";
 import StepNavigation from "./components/StepNavigation";
+
 
 const App =() => {
   // Registro Form
@@ -43,12 +44,16 @@ updateStep={updateStep}/>
       </StepNavigation>
       <h2><strong>Registro</strong></h2>
     <br />
+       <br />
     <p>Texto de Bienvenida</p>
+    <br />
     <br />
 
       {getInfoPerPage()}
 
       <p>Ya tienes una cuenta? <a href="http://">Inciar Sesion</a> </p>
+      <br />
+            <br />
       <button className="primaryButton" disabled={currentStep === 1} onClick={() => updateStep(currentStep - 1)}>Back</button>
       <button className="primaryButton" disabled={currentStep === labelArray.length} onClick={() => updateStep(currentStep+1)}>Next</button>
     
