@@ -1,5 +1,4 @@
 import { useForm } from "react-hook-form";
-import { useState } from "react";
 
 const RegisterFormStep1 = () => {
     

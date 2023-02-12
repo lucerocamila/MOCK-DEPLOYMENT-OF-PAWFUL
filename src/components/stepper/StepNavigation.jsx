@@ -3,10 +3,12 @@ import Step from "./Step";
 
 
 const StepNavigation = (props) => {
+    
     return (
         <div className="stepWrapper">
         {props.labelArray.map((item, index) =>
-         <Step 
+        
+         <Step
          key={index} 
          index={index} 
          label={item} 
